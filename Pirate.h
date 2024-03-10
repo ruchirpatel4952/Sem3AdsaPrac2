@@ -5,14 +5,9 @@
 
 class Pirate : public Move {
 public:
-    std::string getName() const override {
-        return "Pirate";
-    }
+    std::string getName() const override;
 
-    bool defeats(const Move& other) const override {
-        // Assuming Pirate defeats Monkey and Robot for illustration
-        return other.getName() == "Monkey" || other.getName() == "Robot";
-    }
+    bool defeats(const std::shared_ptr<Move>& other) const override;
 };
 
 #endif

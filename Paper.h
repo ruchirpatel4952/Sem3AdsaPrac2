@@ -9,7 +9,7 @@ public:
         return "Paper";
     }
 
-    bool defeats(const Move& other) const override {
+    bool defeats(const std::shared_ptr<Move>& other) const override{
         return other.getName() == "Rock" || other.getName() == "Spock";
     }
 };

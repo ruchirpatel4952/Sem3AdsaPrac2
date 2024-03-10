@@ -9,8 +9,8 @@ public:
         return "Rock";
     }
 
-    bool defeats(const Move& other) const override {
-        return other.getName() == "Scissors"; 
+    bool defeats(const std::shared_ptr<Move>& other) const override{
+        return other->getName() == "Scissors"; // Simplified rule
     }
 };
 
