@@ -2,7 +2,6 @@
 #define MOVE_H
 
 #include <string>
-#include <memory>
 
 class Move {
 public:

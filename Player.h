@@ -1,9 +1,9 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
+#include "Move.h"
 #include <string>
 #include <memory>
-#include "Move.h"
 
 class Player {
 public:

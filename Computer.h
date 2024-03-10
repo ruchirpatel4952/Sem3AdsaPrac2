@@ -2,15 +2,18 @@
 #define COMPUTER_H
 
 #include "Player.h"
-#include <string>
 #include <random>
-#include "Rock.h"
-#include "Paper.h" 
+#include <memory>
 
 class Computer : public Player {
 public:
-    std::unique_ptr<Move> makeMove() override;
-    std::string getName() const override;
+    std::unique_ptr<Move> makeMove() override {
+        return std::make_unique<Rock>(); 
+    }
+
+    std::string getName() const override {
+        return "Computer";
+    }
 };
 
 #endif
