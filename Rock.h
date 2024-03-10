@@ -2,7 +2,6 @@
 #define ROCK_H
 
 #include "Move.h"
-#include <string>
 
 class Rock : public Move {
 public:
@@ -11,7 +10,7 @@ public:
     }
 
     bool defeats(const Move& other) const override {
-        return other.getName() == "Scissors" || other.getName() == "Lizard"; // Adjust according to game rules
+        return other.getName() == "Scissors"; 
     }
 };
 
