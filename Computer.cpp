@@ -1,7 +1,11 @@
 #include "Computer.h"
-char Computer::makeMove() {
-    return 'R'; //returns R for rock
+#include "Rock.h" 
+#include <memory>
+
+std::unique_ptr<Move> Computer::makeMove() {
+    return std::make_unique<Rock>(); 
 }
-std::string Computer::getName() {
-    return "Computer"; // returns computer for name
+
+std::string Computer::getName() const {
+    return "Computer";
 }

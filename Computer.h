@@ -2,9 +2,11 @@
 #define COMPUTER_H
 #include "Player.h"
 #include <string>
+#include <memory>
+
 class Computer : public Player {
 public:
-    char makeMove() override;
-    std::string getName() override;
+    std::unique_ptr<Move> makeMove() override;
+    std::string getName() const override;
 };
 #endif

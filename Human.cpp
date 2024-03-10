@@ -1,13 +1,17 @@
 #include "Human.h"
+#include "Rock.h" // Include specific move headers
 #include <iostream>
-Human::Human(std::string playerName) : name(playerName) {}
-char Human::makeMove() {
-    char move;
-    std::cout << "Enter move: ";
-    std::cin >> move;
-    return move;
-}
+#include <memory>
 
-std::string Human::getName() {
+Human::Human(std::string playerName) : name(playerName) {}
+
+std::unique_ptr<Move> Human::makeMove() {
+    std::cout << "Enter move (Rock, Paper, etc.): ";
+    std::string move;
+    std::cin >> move;
+    // will return the appropriate move object (Rock, Paper, etc.)
+    return std::make_unique<Rock>(); 
+
+std::string Human::getName() const {
     return name;
 }
